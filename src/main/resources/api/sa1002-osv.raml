@@ -1,0 +1,22 @@
+#%RAML 1.0
+title: sa1002-osv system API interact with OSVC System
+description: System api whic will interact with OSVC system using HTTP protocols
+version: v1
+mediaType: 
+- application/json
+protocols:
+  - HTTP
+resourceTypes:
+  organizationsResourceType: !include libraries/resourceTypes/organizations.raml
+
+traits:
+  clientCredentialsTraits: !include libraries/traits/clientCredentials.raml
+
+types:
+  postOrganizationRequest: !include libraries/dataTypes/postOrganizationRequestDataType.raml
+  postOrganizationResponse: !include libraries/dataTypes/postOrganizationResponseDataType.raml
+
+
+/organizations:
+  type:
+    organizationsResourceType
